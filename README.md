@@ -1,5 +1,25 @@
 # docker-files
 
+# Dockerfile Commands
+```
+RUN echo "hello world"    # to run a bash commmand
+ADD source destination    # add resource from localhost to container
+COPY source destination   # copy from localhost to container
+FROM imagename:version    # pull image from docker registry
+ENV  foo something        # declare environment on dockerfile
+WORKDIR /workdirectory    # define work directory
+EXPOSE port               # expose sepcific port
+LABEL label-name          # A LABEL is a key-value pair to give metadata information for image
+STOPSIGNAL signal           # The STOPSIGNAL instruction sets the system call signal that will be sent to the container to exit.  
+USER user                 # define user
+VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]             # define volume for container
+CMD command               # run specific command
+MAINTAINER maintainer-name # give name of container maintainer
+ARG argument value        # give argument
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]   # An ENTRYPOINT allows you to configure a container that will run as an executable.
+SHELL ["powershell", "-command"]                          #The SHELL instruction allows the default shell used for the shell form of commands to be overridden.
+```
+
 # Java Dockerfile
 ```
 FROM openjdk:8-jdk-alpine
